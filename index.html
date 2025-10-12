@@ -1,152 +1,249 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MemER: Scaling Memory for Robot Policies with Experience Retrieval</title>
-  <meta name="description" content="Project page for MemER. Coming soon." />
-  <meta name="theme-color" content="#ffffff" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🧠</text></svg>">
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Scaling Memory for Robot Policies with Experience Retrieval">
+  <meta name="keywords" content="Robotics, Memory, Robot Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scaling Up Memory for Robot Control via Experience Retrieval</title>
 
-  <!-- Open Graph / Twitter (edit image when you add one at /assets/teaser.png) -->
-  <meta property="og:title" content="MemER: Scaling Memory for Robot Policies with Experience Retrieval">
-  <meta property="og:description" content="Project page. Coming soon.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://memer.github.io/assets/teaser.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #ffffff; --fg: #111827; --muted:#6b7280; --accent:#2563eb; --card:#f9fafb; --line:#e5e7eb;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg:#0b0e14; --fg:#e5e7eb; --muted:#9aa4b2; --accent:#60a5fa; --card:#111827; --line:#1f2937; }
-    }
-    * { box-sizing: border-box; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Inter,Helvetica,Arial,sans-serif; }
-    a { color:var(--accent); text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 24px; }
-    header { text-align:center; padding: 28px 0 8px; }
-    .title { font-size: min(8vw, 44px); font-weight: 800; letter-spacing: -.01em; margin: 0; }
-    .subtitle { font-size: min(4.5vw, 18px); color:var(--muted); margin-top: 6px; }
-    .authors { margin-top: 16px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
-    .author a { font-weight:600; }
-    .btnrow { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin: 18px 0 28px; }
-    .btn {
-      display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:1px solid var(--line);
-      border-radius:10px; background:var(--card); font-weight:600;
-    }
-    .btn[aria-disabled="true"] { opacity:.55; pointer-events:none; }
-    .teaser {
-      width:100%; aspect-ratio: 16/9; border:1px dashed var(--line); border-radius:14px; background: repeating-linear-gradient(45deg,var(--card),var(--card) 10px,transparent 10px,transparent 20px);
-      display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600; margin: 0 auto 22px;
-    }
-    section { padding: 20px 0; border-top: 1px solid var(--line); }
-    h2 { font-size: 22px; margin: 0 0 10px; }
-    .abs, .bib { background:var(--card); padding:16px; border:1px solid var(--line); border-radius:12px; }
-    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    pre { margin:0; overflow:auto; font-size: 13px; }
-    footer { text-align:center; color:var(--muted); padding: 32px 0 8px; }
-    .grid2 { display:grid; grid-template-columns: 1fr; gap:16px; }
-    @media(min-width: 860px){ .grid2 { grid-template-columns: 1.2fr .8fr; } }
-    .note { color: var(--muted); font-size: 14px; }
-  </style>
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1 class="title">MemER: Scaling Memory for Robot Policies with Experience Retrieval</h1>
-      <p class="subtitle">Project Page — <span class="note">content coming soon</span></p>
 
-      <div class="authors">
-        <span class="author"><a href="https://github.com/memer">Memer</a></span>
-      </div>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
 
-      <div class="btnrow">
-        <a class="btn" href="#" aria-disabled="true">📄 Paper (coming soon)</a>
-        <a class="btn" href="#" aria-disabled="true">🧠 arXiv (coming soon)</a>
-        <a class="btn" href="https://github.com/memer-policy/memer" target="_blank" rel="noopener" class="btn">💻 Code</a>
-        <a class="btn" href="#" aria-disabled="true">📦 Dataset (coming soon)</a>
-        <a class="btn" href="#bibtex" class="btn">📚 BibTeX</a>
-        <a class="btn" href="#video" class="btn">🎥 Video</a>
-      </div>
-    </header>
 
-    <div class="grid2">
-      <main>
-        <div class="teaser">
-          Add teaser image at <code>/assets/teaser.png</code>
-        </div>
-
-        <section id="abstract">
-          <h2>Abstract</h2>
-          <div class="abs">
-            <p><em>To appear.</em> This page is a lightweight template in the style of academic project sites (Nerfies/LERF). Replace this block with your abstract when ready.</p>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Scaling Up Memory for Robot Control via Experience Retrieval</h1>
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Author 1</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Author 2</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Author 3</a><sup>2</sup>
+            </span>
           </div>
-        </section>
 
-        <section id="video">
-          <h2>Video</h2>
-          <div class="abs">
-            <p class="note">Drop a YouTube link by replacing the <code>src</code> below.</p>
-            <div style="position:relative;padding-top:56.25%;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);">
-              <iframe
-                title="MemER video"
-                src="about:blank"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
-              </iframe>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Institution 1,</span>
+            <span class="author-block"><sup>2</sup>Institution 2</span>
+          </div> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (coming soon)</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/memer-policy/memer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
             </div>
-          </div>
-        </section>
-      </main>
 
-      <aside>
-        <section id="materials">
-          <h2>Materials</h2>
-          <div class="abs">
-            <ul>
-              <li><strong>Paper:</strong> <span class="note">coming soon</span></li>
-              <li><strong>Code:</strong> <a href="https://github.com/memer-policy/memer">github.com/memer</a></li>
-              <li><strong>Dataset:</strong> <span class="note">coming soon</span></li>
-              <li><strong>Contact:</strong> <a href="mailto:">add-email@example.com</a></li>
-            </ul>
           </div>
-        </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <section id="bibtex">
-          <h2>BibTeX</h2>
-          <div class="bib">
-<pre>@misc{memer2025memer,
-  title        = {MemER: Scaling Memory for Robot Policies with Experience Retrieval},
-  author       = {Memer},
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humans rely on memory to perform tasks; our goal is to endow robot policies with the same ability. Naively conditioning on long observation histories is computationally expensive and brittle under covariate shift, while indiscriminate subsampling of history leads to irrelevant or redundant information. We propose a hierarchical policy framework, where the high-level policy is trained to select and track previous task-relevant keyframes from its experience. The high-level policy uses selected keyframes and the most recent frames when generating text instructions for a low-level policy to execute. This design is compatible with existing vision-language-action (VLA) models and enables the system to efficiently reason over long-horizon dependencies. In our experiments, we fine-tune Qwen2.5-VL-3B-Instruct and \(\pi_{0.5}\) as the high-level and low-level policies respectively, using demonstrations supplemented with minimal language annotations. Our approach, <span class="dnerf">MemER</span>, outperforms prior methods on three real-world long-horizon robotic manipulation tasks that require minutes of memory.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video.
+    <div class="columns is-centered has-text-centered" id="video">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="about:blank"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <p class="has-text-centered" style="margin-top: 1rem; color: #777;">Video coming soon. Replace the iframe src with your YouTube embed URL.</p>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  <!-- </div>
+</section> --> 
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method or Results sections can go here -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-centered">
+          <img src="./static/images/architecture.png" alt="Method Overview" style="width: 75%; max-width: 1200px; margin: 2rem auto; display: block;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            The high-level policy processes task instructions, selected keyframes, recent images, and current images from base and wrist-mounted cameras to generate low-level language primitives and candidate keyframes. The low-level policy uses the primitive, current images, and robot joint states to produce actions. The candidate keyframe(s) are processed by the keyframe filter to obtain the selected keyframes for input during the next step of inference.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/clustering_voting.png" alt="Clustering and Voting" style="width: 100%; max-width: 1200px; margin: 2rem auto; display: block;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            At each timestep, the high-level policy nominates candidate keyframe(s), as highlighted in orange. All candidate keyframes are aggregated across time with 1D single-linkage using a merge distance of \(d=5\) frames, yielding disjoint clusters. For each cluster, the colored bars indicate nominations for the observation at that timestamp, with bar height proportional to the number of nominations received. We select one representative frame per cluster by taking the median keyframe of all the candidates, and add that frame to memory.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{memer2025memer,
+  title        = {Scaling Up Memory for Robot Control via Experience Retrieval},
+  author       = {Author Names},
   year         = {2025},
   eprint       = {TODO},
   archivePrefix= {arXiv},
   primaryClass = {cs.RO}
-}</pre>
-          </div>
-        </section>
-      </aside>
-    </div>
-
-    <section id="ack">
-      <h2>Acknowledgements</h2>
-      <div class="abs">
-        <p class="note">You can add acknowledgements here. If you want a totally blank page, delete this section.</p>
-      </div>
-    </section>
-
-    <footer>
-      <p>© <span id="y"></span> Memer. Built with a tiny static template (no frameworks). </p>
-    </footer>
+}</code></pre>
   </div>
+</section> -->
 
-  <script>
-    // Set year automatically
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">MemER</span> scales memory for robot policies with experience retrieval.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+<section class="section" style="padding-top: 1.5rem; padding-bottom: 0.5rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Object Search</h2>
+        <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic;">Task: "search for the baguette" -> "search for the wooden block" -> "search for the eraser"</p>
+        <div class="publication-video">
+          <video id="counting-video" autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+            <source src="./static/videos/ours_search.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Counting</h2>
+        <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic;">Task: "get 3 scoops of peanuts and put it in green bowl, and 3 scoops of jelly beans and put it in blue bowl"</p>
+        <div class="publication-video">
+          <video id="counting-video" autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+            <source src="./static/videos/ours_scooping_cropped.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0.5rem; padding-bottom: 1.5rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Dust & Replace</h2>
+        <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic;">Task: "remove the items from the shelves, dust the shelves, and place the items back on the shelves"</p>
+        <div class="publication-video">
+          <video id="dusting-video" autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+            <source src="./static/videos/ours_dusting.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer" style="padding: 0.5rem 0; width: 100%;">
+  <div class="content has-text-centered">
+    <a class="icon-link" href="https://github.com/memer-policy/memer" class="external-link">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <div class="content has-text-centered" style="margin-bottom: 0;">
+    <p style="margin-bottom: 0;">
+      This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+    </p>
+  </div>
+</footer>
+
 </body>
 </html>
