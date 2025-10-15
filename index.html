@@ -142,7 +142,7 @@
   <div class="container is-max-desktop">
     <div class="has-text-centered">
       <h2 class="title is-3">Counting</h2>
-      <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic; width: 80%; margin-left: auto; margin-right: auto;">Task: "get 3 scoops of peanuts and put it in green bowl, and 3 scoops of jelly beans and put it in blue bowl"</p>
+      <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic; width: 80%; margin-left: auto; margin-right: auto;">Task: "put 3 scoops of peanuts in green bowl, and 3 scoops of jelly beans in blue bowl"</p>
       <div class="publication-video" style="overflow: visible; max-height: none; height: auto; padding: 0; margin-bottom: 0;">
         <video id="counting-video" autoplay controls muted loop playsinline style="width: 80%; height: auto; display: block; max-height: none; margin: 0 auto;">
           <source src="./static/videos/counting_timeline_visualization.mp4"
@@ -168,15 +168,15 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-fullhd">
+<section class="section" style="padding: 0;">
+  <div class="container" style="max-width: 100%; padding: 0;">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <h2 class="title is-3">Method Comparisons</h2>
+        <h2 class="title is-3" style="padding-top: 4rem;">Method Comparisons</h2>
         
-        <div class="comparison-grid" style="margin-top: 2rem;">
+        <div class="comparison-grid" style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; margin-left: -100px;">
           
-          <div style="display: grid; grid-template-columns: 200px repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: center;">
+          <div style="display: grid; grid-template-columns: 200px repeat(4, 320px); gap: 1rem; margin-bottom: 1rem; align-items: center; justify-content: center;">
             <div></div>
             <div><strong>No History</strong></div>
             <div><strong>Short-term History</strong></div>
@@ -184,62 +184,89 @@
             <div><strong>MemER (Ours)</strong></div>
           </div>
           
-          <div style="display: grid; grid-template-columns: 200px repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; align-items: center;">
+          <div style="display: grid; grid-template-columns: 200px repeat(4, 320px); gap: 1rem; margin-bottom: 2rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #fbe3d6;">
+            <!-- Text spanning the whole row -->
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.5rem; font-size: 1.1rem;">
+              <strong>Task: "search for milk carton" → "search for grapes" → "search for blue block"</strong>
+            </div>
             <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem;">
               <strong>Object Search</strong>
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999; width: 320px;">
               Video coming soon
             </div>
-            <div>
+            <div style="width: 320px;">
               <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
                 <source src="./static/videos/search_recent_milk-grapes-blueblock.mp4" type="video/mp4">
               </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">1/3 objects retrieved<br>1/3 optimal path taken</p>
             </div>
-            <div>
+            <div style="width: 320px;">
               <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
                 <source src="./static/videos/search_long_milk-grapes-blueblock.mp4" type="video/mp4">
               </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">2/3 objects retrieved<br>2/3 optimal path taken</p>
             </div>
-            <div>
+            <div style="width: 320px;">
               <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
                 <source src="./static/videos/search_memer_milk-grapes-blueblock.mp4" type="video/mp4">
               </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #5cb85c; margin-top: 0.3rem; font-weight: 500;">3/3 objects retrieved<br>3/3 optimal path taken</p>
             </div>
           </div>
           
-          <div style="display: grid; grid-template-columns: 200px repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; align-items: center;">
+          <div style="display: grid; grid-template-columns: 200px repeat(4, 320px); gap: 1rem; margin-bottom: 2rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #fbe3d6;">
+            <!-- Text spanning the whole row -->
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.5rem; font-size: 1.1rem;">
+              <strong>Task: "put 3 scoops of peanuts in green bowl, and 3 scoops of jelly beans in blue bowl"</strong>
+            </div>
             <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem;">
               <strong>Counting</strong>
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
-              Video coming soon
+            <div style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_no_history.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">1 less scoop of peanuts<br>3 less scoops of jelly beans</p>
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
-              Video coming soon
+            <div style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_recent.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">1 less scoop of peanuts<br>2 less scoops of jelly beans</p>
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
-              Video coming soon
+            <div style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_long.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">3 extra scoops of peanuts<br>1 less scoop of jelly beans</p>
             </div>
-            <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
-              <source src="./static/videos/counting_memer_three_three.mp4" type="video/mp4">
-            </video>
+            <div style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_memer.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #5cb85c; margin-top: 0.3rem; font-weight: 500;">0 scoops off of peanuts<br>0 scoops off of jelly beans</p>
+            </div>
           </div>
           
-          <div style="display: grid; grid-template-columns: 200px repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: center;">
+          <div style="display: grid; grid-template-columns: 200px repeat(4, 320px); gap: 1rem; margin-bottom: 1rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #fbe3d6;">
+            <!-- Text spanning the whole row -->
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.5rem; font-size: 1.1rem;">
+              <strong>Task: "remove the items from the shelves, dust the shelves, and place the items back on the shelves"</strong>
+            </div>
             <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem;">
               <strong>Dust & Replace</strong>
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999; width: 320px;">
               Video coming soon
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999; width: 320px;">
               Video coming soon
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999; width: 320px;">
               Video coming soon
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999; width: 320px;">
               Video coming soon
             </div>
           </div>
@@ -248,48 +275,70 @@
 
         <h2 class="title is-3" style="margin-top: 4rem;">Memory Modality Comparisons</h2>
         
-        <div class="comparison-grid" style="margin-top: 2rem;">
+        <div class="comparison-grid" style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; margin-left: -100px;">
           
-          <div style="display: grid; grid-template-columns: 200px repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: center;">
+          <div style="display: grid; grid-template-columns: 200px repeat(2, 320px); gap: 1rem; margin-bottom: 1rem; align-items: center; justify-content: center;">
             <div></div>
             <div><strong>Text Memory</strong></div>
-            <div><strong>Img Memory</strong></div>
+            <div><strong>MemER (Ours)</strong></div>
           </div>
           
-          <div style="display: grid; grid-template-columns: 200px repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; align-items: center;">
+          <div style="display: grid; grid-template-columns: 200px repeat(2, 320px); gap: 1rem; margin-bottom: 2rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #fbe3d6;">
+            <!-- Text spanning the whole row -->
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.5rem; font-size: 1.1rem;">
+              <strong>Task: "search for milk carton" → "search for grapes" → "search for blue block"</strong>
+            </div>
             <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem;">
               <strong>Object Search</strong>
             </div>
-            <div>
+            <div style="width: 320px;">
               <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
                 <source src="./static/videos/search_text_milk-grapes-blueblock.mp4" type="video/mp4">
               </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">1/3 objects retrieved<br>1/3 optimal path taken</p>
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
-              Video coming soon
+            <div style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/search_memer_milk-grapes-blueblock.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #5cb85c; margin-top: 0.3rem; font-weight: 500;">3/3 objects retrieved<br>3/3 optimal path taken</p>
             </div>
           </div>
           
-          <div style="display: grid; grid-template-columns: 200px repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; align-items: center;">
+          <div style="display: grid; grid-template-columns: 200px repeat(2, 320px); gap: 1rem; margin-bottom: 2rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #fbe3d6;">
+            <!-- Text spanning the whole row -->
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.5rem; font-size: 1.1rem;">
+              <strong>Task: "put 3 scoops of peanuts in green bowl, and 3 scoops of jelly beans in blue bowl"</strong>
+            </div>
             <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem;">
               <strong>Counting</strong>
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
-              Video coming soon
+            <div style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_text.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #d9534f; margin-top: 0.3rem; font-weight: 500;">0 scoops off of peanuts<br>3 scoops off of jelly beans</p>
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
-              Video coming soon
+            <div style="width: 320px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/counting_memer.mp4" type="video/mp4">
+              </video>
+              <p style="text-align: center; font-size: 0.85rem; color: #5cb85c; margin-top: 0.3rem; font-weight: 500;">0 scoops off of peanuts<br>0 scoops off of jelly beans</p>
             </div>
           </div>
           
-          <div style="display: grid; grid-template-columns: 200px repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: center;">
+          <div style="display: grid; grid-template-columns: 200px repeat(2, 320px); gap: 1rem; margin-bottom: 1rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #fbe3d6;">
+            <!-- Text spanning the whole row -->
+            <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.5rem; font-size: 1.1rem;">
+              <strong>Task: "remove the items from the shelves, dust the shelves, and place the items back on the shelves"</strong>
+            </div>
             <div style="writing-mode: horizontal-tb; text-align: right; padding-right: 1rem;">
               <strong>Dust & Replace</strong>
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999; width: 320px;">
               Video coming soon
             </div>
-            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+            <div style="aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999; width: 320px;">
               Video coming soon
             </div>
           </div>
