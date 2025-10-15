@@ -92,11 +92,11 @@ body {
 .publication-video {
     position: relative;
     width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-
-    overflow: hidden;
-    border-radius: 10px !important;
+    height: auto;
+    padding-bottom: 0;
+    
+    /* Avoid clipping the video content */
+    overflow: visible;
 }
 
 .publication-video iframe {
@@ -105,6 +105,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.publication-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px !important;
 }
 
 .publication-body img {
@@ -154,4 +161,21 @@ body {
 }
 #interpolation-image-wrapper img {
   border-radius: 5px;
+}
+
+.comparison-grid {
+  margin-left: -4rem;
+  margin-right: -4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .comparison-grid {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}
+
+/* Allow comparison sections to use more width */
+.section .container.is-fullhd {
+  max-width: 1344px;
 }
