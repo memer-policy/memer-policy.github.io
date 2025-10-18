@@ -35,12 +35,21 @@
     .comparison-grid { margin-left: -100px; }
     /* Slightly smaller captions inside comparison grids */
     .comparison-grid p { font-size: 0.8rem; }
+    /* Ensure header text wraps properly on small screens */
+    .method-header > div, .modality-header > div {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+      line-height: 1.2;
+    }
 
     @media (max-width: 1600px) { :root { --method-label: 180px; --method-col: 280px; --modality-label: 180px; --modality-col: 280px; } }
     @media (max-width: 1400px) { :root { --method-label: 160px; --method-col: 240px; --modality-label: 160px; --modality-col: 240px; } }
     @media (max-width: 1200px) { :root { --method-label: 140px; --method-col: 200px; --modality-label: 140px; --modality-col: 200px; } }
     @media (max-width: 1000px) { :root { --method-label: 120px; --method-col: 160px; --modality-label: 120px; --modality-col: 160px; } }
     @media (max-width: 850px)  { .comparison-grid { margin-left: 0 !important; } :root { --grid-gap: 0.5rem; --method-label: 110px; --method-col: 140px; --modality-label: 110px; --modality-col: 140px; } }
+    @media (max-width: 600px) { .method-header > div, .modality-header > div { font-size: 0.85rem; } }
+    @media (max-width: 480px) { .method-header > div, .modality-header > div { font-size: 0.8rem; } }
     /* Granular steps every 10px (850 -> 320) for columns */
     @media (max-width: 840px) { :root { --method-col: 138px; --modality-col: 138px; } }
     @media (max-width: 830px) { :root { --method-col: 136px; --modality-col: 136px; } }
@@ -86,11 +95,11 @@
     @media (max-width: 430px) { :root { --method-col: 56px;  --modality-col: 60px; } }
     @media (max-width: 420px) { :root { --method-col: 54px;  --modality-col: 58px; } }
     @media (max-width: 410px) { :root { --method-col: 52px;  --modality-col: 56px; } }
-    @media (max-width: 400px) { :root { --method-col: 50px;  --modality-col: 54px; } .comparison-grid p { font-size: 0.7rem !important; } }
+    @media (max-width: 400px) { :root { --method-col: 50px;  --modality-col: 54px; } .comparison-grid p { font-size: 0.7rem !important; } .method-header > div, .modality-header > div { font-size: 0.75rem; } }
     @media (max-width: 390px) { :root { --method-col: 48px;  --modality-col: 52px; } }
     @media (max-width: 380px) { :root { --method-col: 46px;  --modality-col: 50px; } }
     @media (max-width: 370px) { :root { --method-col: 44px;  --modality-col: 48px; } }
-    @media (max-width: 360px) { :root { --method-col: 42px;  --modality-col: 46px; } .comparison-grid p { font-size: 0.66rem !important; } }
+    @media (max-width: 360px) { :root { --method-col: 42px;  --modality-col: 46px; } .comparison-grid p { font-size: 0.66rem !important; } .method-header > div, .modality-header > div { font-size: 0.7rem; } }
     @media (max-width: 350px) { :root { --method-col: 40px;  --modality-col: 44px; } }
     @media (max-width: 340px) { :root { --method-col: 38px;  --modality-col: 42px; } }
     @media (max-width: 330px) { :root { --method-col: 36px;  --modality-col: 40px; } }
