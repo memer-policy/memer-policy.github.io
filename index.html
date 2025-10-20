@@ -12,6 +12,8 @@
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -19,6 +21,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   
   <!-- MathJax for LaTeX rendering -->
@@ -248,7 +252,70 @@
   </div>
 </section>
 
-<section class="section" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Results</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-search-memer has-text-centered">
+          <video poster="" id="search-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_4_cleaned_with_headers.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-counting-memer has-text-centered">
+          <video poster="" id="counting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_3_cleaned_with_headers.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_2_cleaned_with_headers.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_1_cleaned_with_headers.mp4" type="video/mp4">
+          </video>
+          <!-- <p id="overlay">Dusting: MemER successfully dusts and replaces all items</p> -->
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/counting_one-jelly-green-three-peanut-blue_cleaned_with_headers.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/counting_three-jelly-blue-two-peanut-green_cleaned_with_headers.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/counting_three-peanuts-blue-one-jelly-green_cleaned_with_headers.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_pear-milk-corn_with_headers.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_red-milk-grapes_with_headers_cleaned.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_red-olive-blue_with_headers_cleaned.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <br>
+      <p class="has-text-centered">Videos show <b>MemER</b> successfully completing a range of long-horizon tasks requiring memory with a single policy</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 3rem; padding-bottom: 0.5rem;">
   <div class="container is-max-desktop">
     <div class="has-text-centered">
       <h2 class="title is-3">Object Search</h2>
@@ -263,7 +330,7 @@
   </div>
 </section>
 
-<section class="section" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+<section class="section" style="padding-top: 3rem; padding-bottom: 0.5rem;">
   <div class="container is-max-desktop">
     <div class="has-text-centered">
       <h2 class="title is-3">Counting</h2>
@@ -278,7 +345,7 @@
   </div>
 </section>
 
-<section class="section" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+<section class="section" style="padding-top: 3rem; padding-bottom: 0.5rem;">
   <div class="container is-max-desktop">
     <div class="has-text-centered">
       <h2 class="title is-3">Dust & Replace</h2>
