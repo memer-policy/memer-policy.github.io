@@ -252,11 +252,71 @@
   </div>
 </section>
 
+<section class="section" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <h2 class="title is-3">Object Search</h2>
+      <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic; width: 80%; margin-left: auto; margin-right: auto;">Task: "search for the baguette" -> "search for the wooden block" -> "search for the eraser"</p>
+      <div class="publication-video" style="overflow: visible; max-height: none; height: auto; padding: 0; margin-bottom: 0;">
+        <video id="counting-video" autoplay controls muted loop playsinline style="width: 80%; height: auto; display: block; max-height: none; margin: 0 auto;">
+          <source src="./static/videos/search_viz_cleaned.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 3rem; padding-bottom: 0.5rem;">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <h2 class="title is-3">Counting</h2>
+      <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic; width: 80%; margin-left: auto; margin-right: auto;">Task: "put 3 scoops of peanuts in green bowl, and 3 scoops of jelly beans in blue bowl"</p>
+      <div class="publication-video" style="overflow: visible; max-height: none; height: auto; padding: 0; margin-bottom: 0;">
+        <video id="counting-video" autoplay controls muted loop playsinline style="width: 80%; height: auto; display: block; max-height: none; margin: 0 auto;">
+          <source src="./static/videos/counting_viz_cleaned.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 3rem; padding-bottom: 3rem;">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <h2 class="title is-3">Dust & Replace</h2>
+      <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic; width: 80%; margin-left: auto; margin-right: auto;">Task: "remove the items from the shelves, dust the shelves, and place the items back on the shelves"</p>
+      <div class="publication-video" style="overflow: visible; max-height: none; height: auto; padding: 0; margin-bottom: 0;">
+        <video id="dusting-video" autoplay controls muted loop playsinline style="width: 80%; height: auto; display: block; max-height: none; margin: 0 auto;">
+          <source src="./static/videos/dusting_viz_cleaned.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Results</h2>
       <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_pear-milk-corn_with_headers.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_red-milk-grapes_with_headers_cleaned.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_red-olive-blue_with_headers_cleaned.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="item item-search-memer has-text-centered">
           <video poster="" id="search-memer-video" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/dusting_4_cleaned_with_headers.mp4" type="video/mp4">
@@ -293,69 +353,9 @@
             <source src="./static/videos/counting_three-peanuts-blue-one-jelly-green_cleaned_with_headers.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="item item-dusting-memer has-text-centered">
-          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/search_pear-milk-corn_with_headers.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-dusting-memer has-text-centered">
-          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/search_red-milk-grapes_with_headers_cleaned.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-dusting-memer has-text-centered">
-          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/search_red-olive-blue_with_headers_cleaned.mp4" type="video/mp4">
-          </video>
-        </div>
       </div>
       <br>
       <p class="has-text-centered">Videos show <b>MemER</b> successfully completing a range of long-horizon tasks requiring memory with a single policy</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top: 3rem; padding-bottom: 0.5rem;">
-  <div class="container is-max-desktop">
-    <div class="has-text-centered">
-      <h2 class="title is-3">Object Search</h2>
-      <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic; width: 80%; margin-left: auto; margin-right: auto;">Task: "search for the baguette" -> "search for the wooden block" -> "search for the eraser"</p>
-      <div class="publication-video" style="overflow: visible; max-height: none; height: auto; padding: 0; margin-bottom: 0;">
-        <video id="counting-video" autoplay controls muted loop playsinline style="width: 80%; height: auto; display: block; max-height: none; margin: 0 auto;">
-          <source src="./static/videos/search_viz_cleaned.mp4"
-                  type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top: 3rem; padding-bottom: 0.5rem;">
-  <div class="container is-max-desktop">
-    <div class="has-text-centered">
-      <h2 class="title is-3">Counting</h2>
-      <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic; width: 80%; margin-left: auto; margin-right: auto;">Task: "put 3 scoops of peanuts in green bowl, and 3 scoops of jelly beans in blue bowl"</p>
-      <div class="publication-video" style="overflow: visible; max-height: none; height: auto; padding: 0; margin-bottom: 0;">
-        <video id="counting-video" autoplay controls muted loop playsinline style="width: 80%; height: auto; display: block; max-height: none; margin: 0 auto;">
-          <source src="./static/videos/counting_viz_cleaned.mp4"
-                  type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top: 3rem; padding-bottom: 0.5rem;">
-  <div class="container is-max-desktop">
-    <div class="has-text-centered">
-      <h2 class="title is-3">Dust & Replace</h2>
-      <p class="subtitle is-5" style="margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic; width: 80%; margin-left: auto; margin-right: auto;">Task: "remove the items from the shelves, dust the shelves, and place the items back on the shelves"</p>
-      <div class="publication-video" style="overflow: visible; max-height: none; height: auto; padding: 0; margin-bottom: 0;">
-        <video id="dusting-video" autoplay controls muted loop playsinline style="width: 80%; height: auto; display: block; max-height: none; margin: 0 auto;">
-          <source src="./static/videos/dusting_viz_cleaned.mp4"
-                  type="video/mp4">
-        </video>
-      </div>
     </div>
   </div>
 </section>
