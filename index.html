@@ -235,7 +235,7 @@
         </div>
         <div class="content has-text-justified">
           <p>
-            The high-level policy processes task instructions, selected keyframes, recent images, and current images from base and wrist-mounted cameras to generate low-level language primitives and candidate keyframes. The low-level policy uses the primitive, current images, and robot joint states to produce actions. The candidate keyframe(s) are processed by the keyframe filter to obtain the selected keyframes for input during the next step of inference.
+            The high-level policy processes task instructions, selected keyframes, recent images, and current images from base and wrist-mounted cameras to generate low-level language subtasks and candidate keyframes. The low-level policy uses the subtask, current images, and robot joint states to produce actions. The candidate keyframe(s) are processed by the keyframe filter to obtain the selected keyframes for input during the next step of inference.
           </p>
         </div>
         <div class="content has-text-centered">
@@ -355,7 +355,7 @@
         </div>
       </div>
       <br>
-      <p class="has-text-centered">Videos show <b>MemER</b> successfully completing a range of long-horizon tasks requiring memory with a single policy</p>
+      <p class="has-text-centered"><b>MemER</b> successfully completes a range of long-horizon tasks that require memory, using a single policy</p>
     </div>
   </div>
 </section>
@@ -370,14 +370,13 @@
           
           <div class="method-header" style="display: grid; margin-bottom: 1rem; align-items: center; justify-content: center;">
             <div></div>
-            <div><strong>No History</strong></div>
-            <div><strong>Short-term History</strong></div>
-            <div><strong>Long-term History</strong></div>
+            <div><strong>No History (N=1 frame)</strong></div>
+            <div><strong>Short History (N=8 frames)</strong></div>
+            <div><strong>Long History (N=32 frames)</strong></div>
             <div><strong>MemER (Ours)</strong></div>
           </div>
           
           <div class="method-row" style="display: grid; margin-bottom: 2rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
-            <!-- Text spanning the whole row -->
             <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
               <strong>Object Search</strong>
               <br>
@@ -413,7 +412,6 @@
           </div>
           
           <div class="method-row" style="display: grid; margin-bottom: 2rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
-            <!-- Text spanning the whole row -->
             <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
               <strong>Counting</strong>
               <br>
@@ -449,7 +447,6 @@
           </div>
           
           <div class="method-row" style="display: grid; margin-bottom: 1rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
-            <!-- Text spanning the whole row -->
             <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
               <strong>Dust & Replace</strong>
               <br>
@@ -497,7 +494,6 @@
           </div>
           
           <div class="modality-row" style="display: grid; margin-bottom: 1rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
-            <!-- Text spanning the whole row -->
             <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
               <strong>Object Search</strong>
               <br>
@@ -571,6 +567,48 @@
         </div>
 
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Robust to Retries</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_retry_baguette-wooden-eraser.mp4" type="video/mp4">
+          </video>
+          <p class="overlay">Dropped baguette</p>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/search_retry-grasping.mp4" type="video/mp4">
+          </video>
+          <p class="overlay">Multiple failed grasps on tomato</p>
+        </div>
+        <div class="item item-search-memer has-text-centered">
+          <video poster="" id="search-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/counting_retry_empty-scoop_with_headers.mp4" type="video/mp4">
+          </video>
+          <p class="overlay">Multiple empty scoops</p>
+        </div>
+        <div class="item item-counting-memer has-text-centered">
+          <video poster="" id="counting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_retry_duster-drop-lots-smiley-drop-twice_cleaned_with_headers.mp4" type="video/mp4">
+          </video>
+          <p class="overlay">Multiple missed grasps on duster, smiley face dropped twice</p>
+        </div>
+        <div class="item item-dusting-memer has-text-centered">
+          <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dusting_retry_bottom-shoe-stuck-gripper_cleaned_with_headers.mp4" type="video/mp4">
+          </video>
+          <p class="overlay">Shoe stuck on gripper</p>
+        </div>
+      </div>
+      <br>
+      <p class="has-text-centered"><b>MemER</b> successfully completes the tasks despite errors and retries incurred during execution that cause historical context to look out of distribution</p>
     </div>
   </div>
 </section>
