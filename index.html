@@ -25,28 +25,23 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   
-  <!-- MathJax for LaTeX rendering -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
-    /* Responsive grids using CSS variables for granular control */
     :root { --method-col: 360px; --modality-col: 360px; --grid-gap: 1rem; }
     .method-header, .method-row { grid-template-columns: repeat(4, var(--method-col)) !important; gap: var(--grid-gap) !important; }
     .modality-header, .modality-row { grid-template-columns: repeat(2, var(--modality-col)) !important; gap: var(--grid-gap) !important; }
     
-    /* Hide the empty header cell in the first column */
     .method-header > div:first-child,
     .modality-header > div:first-child {
       display: none !important;
     }
     
-    /* Hide the row label column (second div after the task description) */
     .method-row > div:nth-child(2),
     .modality-row > div:nth-child(2) {
       display: none !important;
     }
     
-    /* Add row label text to task description using CSS */
     .method-row > div:first-child::after {
       content: attr(data-label);
       display: block;
@@ -62,9 +57,7 @@
       margin-top: 0.5rem;
       font-size: 1rem;
     }
-    /* Ensure video wrapper shrinks with the grid column */
     .video-cell { width: 100% !important; }
-    /* Ensure comparison grids are centered with balanced margins */
     .comparison-grid { 
       margin-left: auto; 
       margin-right: auto;
@@ -72,9 +65,7 @@
       padding-right: 1rem;
       max-width: 100%;
     }
-    /* Slightly smaller captions inside comparison grids */
     .comparison-grid p { font-size: 0.8rem; }
-    /* Ensure header text wraps properly on small screens */
     .method-header > div, .modality-header > div {
       word-wrap: break-word;
       overflow-wrap: break-word;
@@ -82,50 +73,41 @@
       line-height: 1.2;
     }
 
-    /* Responsive sizing strategy: keep videos large as long as possible */
-    
-    /* Method columns need to shrink for 4-column layout, but modality stays big */
     @media (max-width: 1600px) { 
       :root { 
         --method-col: 280px; 
-        --modality-col: 360px; /* Keep modality large - only 2 columns */
+        --modality-col: 360px; 
       } 
     }
     @media (max-width: 1400px) { 
       :root { 
         --method-col: 240px; 
-        --modality-col: 360px; /* Keep modality large */
+        --modality-col: 360px;
       } 
     }
     @media (max-width: 1200px) { 
       :root { 
         --method-col: 200px; 
-        --modality-col: 360px; /* Keep modality large */
+        --modality-col: 360px; 
       } 
     }
     
-    /* Medium screens: keep at optimal fixed sizes */
     @media (max-width: 1000px) { 
       :root { 
         --method-col: 180px;
-        --modality-col: 360px; /* Still at maximum comfortable size */
+        --modality-col: 360px; 
         --grid-gap: 0.5rem;
       } 
     }
     
-    /* Start scaling only when space gets tight (below 850px) */
     @media (max-width: 850px) { 
       :root { 
-        /* Method columns scale smoothly from 180px down to 55px */
         --method-col: clamp(55px, calc(-10px + 22.4vw), 180px);
-        /* Modality columns stay 2x method columns */
         --modality-col: clamp(110px, calc(-20px + 44.8vw), 360px);
-        /* Grid gap scales from 0.5rem down to 0.25rem */
         --grid-gap: clamp(0.25rem, calc(0.1rem + 0.47vw), 0.5rem);
       } 
     }
     
-    /* Responsive padding - scales smoothly */
     @media (max-width: 850px) { 
       .comparison-grid { 
         padding-left: clamp(0.5rem, 2vw, 1rem);
@@ -140,7 +122,6 @@
       } 
     }
     
-    /* Font sizes scale smoothly */
     @media (max-width: 600px) { 
       .method-header > div, .modality-header > div { 
         font-size: clamp(0.7rem, calc(0.5rem + 1vw), 0.85rem); 
@@ -176,17 +157,6 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv (coming soon)</span>
-                </a>
-              </span> -->
-              <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/memer-policy/memer"
                    class="external-link button is-normal is-rounded is-dark">
@@ -207,7 +177,6 @@
 
 <section class="section" style="padding-top: 0;">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <div class="content has-text-centered">
@@ -337,7 +306,6 @@
           <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/dusting_1.mp4" type="video/mp4">
           </video>
-          <!-- <p id="overlay">Dusting: MemER successfully dusts and replaces all items</p> -->
         </div>
         <div class="item item-dusting-memer has-text-centered">
           <video poster="" id="dusting-memer-video" autoplay controls muted loop playsinline height="100%">
@@ -583,7 +551,6 @@
           </div>
           
           <div class="modality-row" style="display: grid; margin-bottom: 1rem; align-items: center; justify-content: center; padding: 1rem; border-radius: 8px; background-color: #f5f5f5;">
-            <!-- Text spanning the whole row -->
             <div style="grid-column: 1 / -1; text-align: center; padding-bottom: 0.25rem; font-size: 1.1rem;">
               <strong>Dust & Replace</strong>
               <br>
